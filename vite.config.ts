@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/blackrock-guarulhos/", // NOME EXATO DO REPO
+  base: "/lume_guarulhos/", // NOME EXATO DO REPO
 });
