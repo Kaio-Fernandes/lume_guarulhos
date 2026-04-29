@@ -1,0 +1,279 @@
+/* ===== HERO ===== */
+.hero{
+  min-height: 100vh;
+  display:grid;
+  place-items:center;
+  position: relative;
+  overflow:hidden;
+}
+
+/* ===== VARIÁVEIS ===== */
+:root{
+  --gold1: #d4af37;
+  --gold2: #b8962e;
+  --gold3: #f5d76e;
+}
+
+/* ===== CONTAINER ===== */
+.heroInner{
+  width: min(1060px, 100%);
+  min-height: 100svh;
+  padding:
+    calc(env(safe-area-inset-top, 0px) + 22px)
+    24px
+    22px;
+  position: relative;
+  z-index: 2;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ===== LOGO ===== */
+.heroLogo{
+  width: clamp(150px, 12vw, 230px);
+  height: auto;
+  filter: drop-shadow(0 14px 30px rgba(0,0,0,.72));
+  transition: opacity 220ms ease, transform 220ms ease;
+  margin-top: -24px;
+}
+
+.site.isScrolled .heroLogo{
+  opacity: 0.18;
+  transform: translateY(-10px) scale(0.96);
+}
+
+/* ===== TEXTO ===== */
+.heroHeadline{
+  margin: 0;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(18px, 2.1vw, 34px);
+  line-height: 1.10;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 18px 40px rgba(0,0,0,.55);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ===== IMAGEM ===== */
+.heroPhonesWrap{
+  width: min(820px, 78vw);
+  margin-top: 28px;
+  position: relative;
+  display:grid;
+  place-items:center;
+}
+
+.heroPhonesWrap::before{
+  content:"";
+  position:absolute;
+  left: 9%;
+  right: 9%;
+  bottom: 10%;
+  height: clamp(170px, 24svh, 360px);
+  border-radius: 999px;
+
+  /* 🔥 dourado no glow */
+  background: radial-gradient(
+    closest-side,
+    rgba(212,175,55,0.12),
+    transparent 72%
+  );
+
+  filter: blur(28px);
+  opacity: .6;
+}
+
+.heroPhones{
+  width: 100%;
+  height: auto;
+  max-height: min(36svh, 430px);
+  object-fit: contain;
+  transform: translateY(-6px);
+  filter: drop-shadow(0 56px 120px rgba(0,0,0,.94));
+  user-select:none;
+  pointer-events:none;
+}
+
+/* ===== BOTÕES ===== */
+.heroCtas{
+  margin-top: 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.heroBtn{
+  padding: 12px 26px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  /* ✨ dourado mais refinado */
+  background: linear-gradient(
+    180deg,
+    #f6e6a8 0%,
+    #e4c96a 45%,
+    #caa84a 100%
+  );
+
+  color: #1a1a1a;
+
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  /* glow + profundidade */
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 2px 6px rgba(255,215,130,.25);
+
+  transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
+
+  min-width: 240px;
+}
+
+/* hover mais elegante (não exagerado) */
+.heroBtn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 14px 28px rgba(0,0,0,.6),
+    0 0 0 1px rgba(255,255,255,.10) inset,
+    0 4px 10px rgba(255,215,130,.30);
+}
+
+.heroBtn:active{
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+
+.heroBtnGhost{
+  text-decoration:none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(255,255,255,0.92);
+
+  background: rgba(0,0,0,0.20);
+
+  /* 🔥 borda dourada */
+  border: 1px solid rgba(212,175,55,0.25);
+
+  box-shadow: 0 18px 36px rgba(0,0,0,.45);
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+  min-width: 220px;
+  text-align:center;
+}
+
+.heroBtnGhost:hover{
+  transform: translateY(-1px);
+  background: rgba(0,0,0,0.32);
+  border-color: rgba(212,175,55,0.45);
+}
+
+.heroBtnGhost:active{
+  transform: translateY(0);
+}
+
+/* ===== CARDS ===== */
+.heroValue{
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  margin-top: 32px;
+}
+
+.heroValueInner{
+  width: min(980px, 100%);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.valueCard{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+
+  background: rgba(0,0,0,0.40);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 18px 54px rgba(0,0,0,.62);
+  backdrop-filter: blur(12px);
+
+  min-height: 66px;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.valueCard:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.16);
+  background: rgba(0,0,0,0.48);
+}
+
+/* 🔥 destaque dourado */
+.valueCardHighlight{
+  border-color: rgba(212,175,55,0.35);
+  box-shadow:
+    0 18px 54px rgba(0,0,0,.62),
+    0 0 0 1px rgba(212,175,55,0.15) inset;
+}
+
+/* ===== ICONES ===== */
+.valueIcon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.valueIcon img{
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* ===== TEXTO ===== */
+.valueText{
+  display:flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.valueText strong{
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.95);
+}
+
+.valueText span{
+  font-size: 12px;
+  color: rgba(255,255,255,0.58);
+}
+
+/* ===== FOOTER ===== */
+.heroFooter{
+  margin-top: 8px;
+  letter-spacing: .20em;
+  font-weight: 800;
+  color: rgba(255,255,255,0.86);
+}

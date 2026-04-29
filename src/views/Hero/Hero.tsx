@@ -1,0 +1,123 @@
+import React from "react";
+import "./Hero.css";
+
+// ✅ IMPORTANDO IMAGENS (ajuste o caminho se necessário)
+import logo from "../../assets/logo_lume.png";
+import phones from "../../assets/phones.png";
+import envio from "../../assets/envio.png";
+
+type Props = {
+  waHref: string;
+  onGoTo: (id: string) => void;
+};
+
+export default function Hero({ waHref, onGoTo }: Props) {
+ console.log("Hero carregou");
+  return (
+    <section className="hero" id="hero">
+      <div className="heroInner">
+        {/* LOGO */}
+        <img className="heroLogo" src={logo} alt="LUME" />
+
+        <h1 className="heroHeadline">
+          iPhones Selecionados. Experiência Elevada.
+        </h1>
+
+        {/* IMAGEM DOS IPHONES */}
+        <div className="heroPhonesWrap" aria-hidden="true">
+          <img className="heroPhones" src={phones} alt="" />
+        </div>
+
+        {/* BOTÕES */}
+        <div className="heroCtas">
+          <button
+            className="heroBtn"
+            type="button"
+            onClick={() => onGoTo("compare")}
+          >
+            VER NOSSA SELEÇÃO
+          </button>
+
+          <a
+            className="heroBtnGhost"
+            href={waHref}
+            target="_blank"
+            rel="noreferrer"
+          >
+            FALAR NO WHATSAPP
+          </a>
+        </div>
+
+        {/* VALORES */}
+        <div className="heroValue" aria-label="Diferenciais da Lume">
+          <div className="heroValueInner">
+            <article className="valueCard">
+              <div className="valueIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M7 7.2c1.6-1.3 3.6-2.2 5-2.2s3.4.9 5 2.2"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M6.5 9.5h11l-1 11H7.5l-1-11Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M9 9.5V8.2c0-1.7 1.4-3.2 3-3.2s3 1.5 3 3.2V9.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div className="valueText">
+                <strong>Modelos selecionados</strong>
+                <span>Curadoria premium.</span>
+              </div>
+            </article>
+
+            <article className="valueCard valueCardHighlight">
+              <div className="valueIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M9.5 12.2l1.7 1.7 3.6-4.1"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <div className="valueText">
+                <strong>Garantia & qualidade</strong>
+                <span>Padrão elevado.</span>
+              </div>
+            </article>
+
+            <article className="valueCard">
+              <div className="valueIcon" aria-hidden="true">
+                <img src={envio} alt="" />
+              </div>
+              <div className="valueText">
+                <strong>Localização privilegiada</strong>
+                <span>Seu atendimento no melhor local</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div className="heroFooter">LUME</div>
+      </div>
+    </section>
+  );
+}

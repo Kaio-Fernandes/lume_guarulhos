@@ -1,0 +1,138 @@
+/* ===== Background FX (bokeh + sparkles) ===== */
+:root{
+  --ease: cubic-bezier(.2,.8,.2,1);
+
+  /* 🔥 dourado */
+  --gold1: #d4af37;
+  --gold2: #b8962e;
+  --goldSoft: rgba(212,175,55,0.18);
+}
+
+.bgFx{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ===== BOKEH ===== */
+.bokeh{
+  position: absolute;
+  inset: 0;
+  opacity: 0.55; /* mais elegante */
+}
+
+.bokehDot{
+  position: absolute;
+  border-radius: 999px;
+
+  filter: blur(18px);
+  mix-blend-mode: screen;
+
+  /* 🔥 trocado verde → dourado */
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.10), transparent 58%),
+    radial-gradient(circle at 65% 60%, rgba(212,175,55,0.18), transparent 62%),
+    radial-gradient(circle at 50% 50%, rgba(212,175,55,0.06), transparent 74%);
+
+  animation:
+    bokehDrift 28s var(--ease) infinite alternate,
+    bokehBreath 12s var(--ease) infinite;
+
+  will-change: transform, opacity, filter;
+}
+
+/* posições mantidas */
+.b1{ width: 520px; height: 520px; left: -120px; top: -140px; animation-delay: -1.2s; }
+.b2{ width: 420px; height: 420px; left: 8%; top: 14%; animation-delay: -3.7s; }
+.b3{ width: 640px; height: 640px; left: 55%; top: -220px; animation-delay: -5.2s; }
+.b4{ width: 520px; height: 520px; left: 72%; top: 12%; animation-delay: -2.1s; }
+.b5{ width: 380px; height: 380px; left: 84%; top: 52%; animation-delay: -6.1s; }
+.b6{ width: 680px; height: 680px; left: 18%; top: 62%; animation-delay: -4.3s; }
+.b7{ width: 520px; height: 520px; left: 45%; top: 58%; animation-delay: -7.0s; }
+.b8{ width: 420px; height: 420px; left: -160px; top: 62%; animation-delay: -8.2s; }
+.b9{ width: 700px; height: 700px; left: 60%; top: 48%; animation-delay: -9.1s; }
+.b10{ width: 360px; height: 360px; left: 30%; top: -120px; animation-delay: -10.0s; }
+.b11{ width: 520px; height: 520px; left: 92%; top: -160px; animation-delay: -11.2s; }
+.b12{ width: 520px; height: 520px; left: 6%; top: 42%; animation-delay: -12.4s; }
+
+@keyframes bokehDrift{
+  from{ transform: translate3d(0,0,0) scale(1); }
+  to  { transform: translate3d(18px, -12px, 0) scale(1.03); }
+}
+
+@keyframes bokehBreath{
+  0%  { opacity: 0.45; filter: blur(18px); }
+  50% { opacity: 0.65; filter: blur(22px); }
+  100%{ opacity: 0.48; filter: blur(18px); }
+}
+
+/* ===== SPARKLES ===== */
+.sparkles{
+  position: absolute;
+  inset: 0;
+  opacity: 0.65;
+}
+
+.spark{
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+
+  /* 🔥 branco mais suave */
+  background: rgba(255,255,255,0.55);
+
+  /* 🔥 glow dourado */
+  box-shadow:
+    0 0 12px rgba(212,175,55,0.35),
+    0 0 8px rgba(255,255,255,0.20);
+
+  transform: translate3d(0, 0, 0);
+  opacity: 0;
+
+  animation:
+    sparkRise 10s linear infinite,
+    sparkTwinkle 2.4s var(--ease) infinite;
+
+  will-change: transform, opacity;
+}
+
+/* posições mantidas */
+.s1{ left: 6%;  bottom: -10%; animation-delay: -1.2s; }
+.s2{ left: 14%; bottom: -22%; animation-delay: -2.8s; }
+.s3{ left: 22%; bottom: -14%; animation-delay: -6.1s; }
+.s4{ left: 30%; bottom: -18%; animation-delay: -3.3s; }
+.s5{ left: 38%; bottom: -12%; animation-delay: -7.2s; }
+.s6{ left: 46%; bottom: -24%; animation-delay: -4.0s; }
+.s7{ left: 54%; bottom: -16%; animation-delay: -8.4s; }
+.s8{ left: 62%; bottom: -20%; animation-delay: -5.6s; }
+.s9{ left: 70%; bottom: -10%; animation-delay: -9.1s; }
+.s10{ left: 78%; bottom: -26%; animation-delay: -6.7s; }
+.s11{ left: 86%; bottom: -14%; animation-delay: -10.3s; }
+.s12{ left: 92%; bottom: -22%; animation-delay: -7.8s; }
+.s13{ left: 10%; bottom: -12%; animation-delay: -11.1s; }
+.s14{ left: 26%; bottom: -18%; animation-delay: -12.6s; }
+.s15{ left: 44%; bottom: -8%;  animation-delay: -13.7s; }
+.s16{ left: 58%; bottom: -16%; animation-delay: -14.2s; }
+.s17{ left: 74%; bottom: -12%; animation-delay: -15.0s; }
+.s18{ left: 88%; bottom: -8%;  animation-delay: -16.1s; }
+
+@keyframes sparkRise{
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  10%  { opacity: 0.85; }
+  70%  { opacity: 0.45; }
+  100% { transform: translate3d(0, -140vh, 0); opacity: 0; }
+}
+
+@keyframes sparkTwinkle{
+  0%, 100%{ opacity: 0.35; }
+  50%{ opacity: 0.9; }
+}
+
+/* ===== REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce){
+  .bokehDot, .spark{ animation: none !important; }
+}
