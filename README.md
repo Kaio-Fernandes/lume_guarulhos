@@ -1,6 +1,6 @@
-#  Black Rock — Premium iPhone Experience
+#  Lume — Premium iPhone Experience
 
-**Black Rock** é um projeto front-end focado em entregar uma **experiência de compra premium**, inspirada no padrão visual e de interação da Apple, aplicada à exploração de iPhones.
+**Lume** é um projeto front-end focado em entregar uma **experiência de compra premium**, inspirada no padrão visual e de interação da Apple, aplicada à exploração de iPhones.
 
 O projeto simula um **e-commerce de alto padrão**, combinando design sofisticado, micro-interações refinadas e navegação fluida — com atenção obsessiva aos detalhes.
 
@@ -8,7 +8,7 @@ O projeto simula um **e-commerce de alto padrão**, combinando design sofisticad
 
 ## 🚀 Visão do Produto
 
-Mais do que uma vitrine de produtos, o Black Rock foi pensado como uma **experiência digital**.
+Mais do que uma vitrine de produtos, o Lume foi pensado como uma **experiência digital**.
 
 O usuário não apenas “vê” um iPhone — ele:
 - explora modelos de forma intuitiva,
@@ -93,8 +93,6 @@ src/
 └─ pages/
 └─ HomePage.tsx
 
-
-
 ---
 
 ## 🧭 Navegação do Usuário
@@ -114,7 +112,6 @@ src/
 ## 📦 Organização de Assets
 
 Os produtos seguem o padrão:
-
 
 Esse formato permite:
 - Escalar o catálogo com facilidade
@@ -147,30 +144,3 @@ npm run build
 
 # preview do build
 npm run preview
-
-
-📌 Status do Projeto
-
-✅ Funcional
-🎨 Visual refinado
-🛠 Evolução contínua
-
-O projeto foi pensado como uma base sólida para:
-
-landing pages premium
-
-estudos avançados de UX/UI
-
-portfólio profissional
-
-👨‍💻 Sobre
-
-Projeto desenvolvido por Nexum Tecnologia, com foco em:
-
-Experiência premium
-
-Design moderno
-
-Interação fluida
-
-Código limpo e escalável
