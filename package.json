@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://gsoars.github.io/blackrock-guarulhos/",
+  "homepage": "https://Kaio-Fernandes.github.io/lume_guarulhos/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -31,4 +31,6 @@
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"
   }
+  
 }
+
